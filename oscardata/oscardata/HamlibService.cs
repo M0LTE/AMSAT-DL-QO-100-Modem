@@ -60,7 +60,7 @@ namespace oscardata
                     var rigCtlPath = Path.Combine(dir, "bin", "rigctl.exe");
                     if (!File.Exists(rigCtlPath)) continue;
                     var (stdout, _) = await ReadAsync(rigCtlPath, "--version");
-                    var parts = stdout.Split(new[] { ' ', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                    var parts = stdout.Split(new[] { ' ', '\r', '\n', '~' }, StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (var part in parts)
                     {
